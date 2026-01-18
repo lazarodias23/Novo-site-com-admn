@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morena Bruta - Modelos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Poppins', 'sans-serif'], display: ['Cinzel', 'serif'] }, colors: { gold: '#D4AF37', 'gold-dark': '#B8860B' } } } }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+    
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-transparent" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <a href="index.html" class="text-2xl md:text-3xl font-display font-bold uppercase tracking-widest text-white flex items-center gap-2 drop-shadow-lg">
+                Morena <span class="text-gold-gradient">Bruta</span>
+            </a>
+            <div class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-gold transition-colors">Início</a>
+                <a href="agencia.html" class="hover:text-gold transition-colors">Agência</a>
+                <a href="modelos.html" class="text-gold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-[2px] after:bg-gold">Modelos</a>
+                <a href="boates.html" class="hover:text-gold transition-colors">Boates</a>
+                <a href="contatos.html" class="hover:text-gold transition-colors">Contatos</a>
+            </div>
+            <button id="btn-mobile" class="md:hidden text-white text-2xl hover:text-gold transition-colors">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-950/95 backdrop-blur-xl border-b border-gray-800 absolute w-full p-6 flex flex-col gap-6 shadow-2xl">
+            <a href="index.html" class="text-white hover:text-gold font-bold uppercase tracking-widest text-sm">Início</a>
+            <a href="agencia.html" class="text-white hover:text-gold font-bold uppercase tracking-widest text-sm">Agência</a>
+            <a href="modelos.html" class="text-gold font-bold uppercase tracking-widest text-sm">Modelos</a>
+            <a href="boates.html" class="text-white hover:text-gold font-bold uppercase tracking-widest text-sm">Boates</a>
+            <a href="contatos.html" class="text-white hover:text-gold font-bold uppercase tracking-widest text-sm">Contatos</a>
+        </div>
+    </nav>
+
+    <div class="pt-36 pb-20 px-4 max-w-7xl mx-auto flex-grow">
+        <div class="text-center mb-16 reveal active">
+            <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-6 uppercase tracking-widest">Nosso <span class="text-gold-gradient">Casting</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto font-light">Elegância, beleza e sofisticação. Selecione uma categoria para encontrar sua companhia ideal.</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-3 mb-16 reveal active" style="transition-delay: 200ms;">
+            <button class="filter-btn bg-gold text-black border border-gold px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider shadow-gold transition-all">Todas</button>
+            <button class="filter-btn text-gray-400 border border-gray-700 bg-transparent px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:border-gold hover:text-white transition-all">Cachoeira do Sul</button>
+            <button class="filter-btn text-gray-400 border border-gray-700 bg-transparent px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:border-gold hover:text-white transition-all">Serra Gaúcha</button>
+            <button class="filter-btn text-gray-400 border border-gray-700 bg-transparent px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:border-gold hover:text-white transition-all">Cachoeirinha</button>
+            <button class="filter-btn text-gray-400 border border-gray-700 bg-transparent px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:border-gold hover:text-white transition-all">Torres</button>
+            <button class="filter-btn text-gray-400 border border-gray-700 bg-transparent px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:border-gold hover:text-white transition-all">Florianópolis</button>
+            <button class="filter-btn text-gray-400 border border-gray-700 bg-transparent px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:border-gold hover:text-white transition-all">Atendimento Presencial</button>
+            <button class="filter-btn text-gray-400 border border-gray-700 bg-transparent px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider hover:border-gold hover:text-white transition-all">Online</button>
+        </div>
+
+        <div id="models-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Renderizado via JS -->
+        </div>
+    </div>
+
+    <!-- Modal Genérico -->
+    <div id="generic-modal" class="hidden fixed inset-0 z-[100] bg-black/90 items-center justify-center p-4 backdrop-blur-lg">
+        <div class="bg-[#111] w-full max-w-6xl h-[90vh] rounded-2xl border border-white/10 relative flex flex-col p-6 overflow-y-auto shadow-2xl custom-scrollbar">
+            <button id="close-modal" class="absolute top-4 right-4 text-white hover:text-gold z-50 bg-black/50 rounded-full p-2 hover:bg-white/10 transition-all"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+            <div id="modal-content-body" class="mt-4 h-full">
+                <!-- Conteúdo Injetado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black border-t border-white/10 py-10 text-center mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-xl font-display font-bold text-white uppercase mb-4 tracking-widest">Morena <span class="text-gold">Bruta</span></h2>
+            <p class="text-gray-600 text-xs tracking-wide">&copy; 2024 Morena Bruta. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

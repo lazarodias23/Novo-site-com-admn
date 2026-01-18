@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morena Bruta - Agência</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { gold: '#D4AF37', 'gold-dark': '#B8860B' } } } }
+    </script>
+</head>
+<body class="bg-black text-gray-200 flex flex-col min-h-screen">
+    
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold uppercase text-white">Morena <span class="text-gold">Bruta</span></a>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-gold">Início</a>
+                <a href="agencia.html" class="text-gold border-b border-gold">Agência</a>
+                <a href="modelos.html" class="hover:text-gold">Modelos</a>
+                <a href="boates.html" class="hover:text-gold">Boates</a>
+                <a href="contatos.html" class="hover:text-gold">Contatos</a>
+            </div>
+            <button id="btn-mobile" class="md:hidden text-white text-2xl">☰</button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 absolute w-full p-4 flex flex-col gap-4">
+            <a href="index.html" class="text-white">Início</a>
+            <a href="agencia.html" class="text-gold">Agência</a>
+            <a href="modelos.html" class="text-white">Modelos</a>
+            <a href="boates.html" class="text-white">Boates</a>
+            <a href="contatos.html" class="text-white">Contatos</a>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-20 px-4 max-w-7xl mx-auto flex-grow">
+        <!-- Sobre Nós -->
+        <div class="mb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h1 class="text-4xl font-bold text-white mb-6 uppercase">Sobre <span class="text-gold">Nós</span></h1>
+                <p class="text-gray-400 mb-4 leading-relaxed">A Morena Bruta é referência em agenciamento de luxo. Focamos na excelência, discrição e segurança, proporcionando experiências únicas para clientes exigentes.</p>
+                <div class="bg-zinc-900 p-6 border-l-4 border-gold rounded-r">
+                    <p class="italic text-gray-300">"Mais que uma agência, uma curadoria de momentos inesquecíveis."</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://picsum.photos/seed/office1/400/500" class="rounded shadow-lg border border-gray-800 mt-8 hover:scale-105 transition-transform">
+                <img src="https://picsum.photos/seed/office2/400/500" class="rounded shadow-lg border border-gray-800 mb-8 hover:scale-105 transition-transform">
+            </div>
+        </div>
+
+        <!-- Nossas Modelos (Preview) -->
+        <div class="mb-20 bg-zinc-900/50 p-8 rounded-xl border border-gray-800">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-white uppercase">Nossas <span class="text-gold">Modelos</span></h2>
+                <a href="modelos.html" class="text-gold text-sm font-bold uppercase hover:underline flex items-center gap-1">Ver Todas <span>→</span></a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- ID 6: Adri -->
+                <div data-id="6" class="agency-model-card aspect-[3/4] bg-black rounded relative overflow-hidden cursor-pointer border hover:border-gold transition-all group">
+                    <img src="images/adri_capa.jpg" onerror="this.src='https://picsum.photos/seed/adri/400/600'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black to-transparent w-full"><h3 class="font-bold text-white uppercase">Adri</h3></div>
+                </div>
+                <!-- ID 1: Angel -->
+                <div data-id="1" class="agency-model-card aspect-[3/4] bg-black rounded relative overflow-hidden cursor-pointer border hover:border-gold transition-all group">
+                    <img src="images/angel_1.jpg" onerror="this.src='https://picsum.photos/seed/angel/400/600'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black to-transparent w-full"><h3 class="font-bold text-white uppercase">Angel</h3></div>
+                </div>
+                <!-- ID 2: Yasmin -->
+                <div data-id="2" class="agency-model-card aspect-[3/4] bg-black rounded relative overflow-hidden cursor-pointer border hover:border-gold transition-all group">
+                    <img src="images/yasmin_2.jpg" onerror="this.src='https://picsum.photos/seed/yasmin/400/600'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black to-transparent w-full"><h3 class="font-bold text-white uppercase">Yasmin</h3></div>
+                </div>
+                <!-- ID 3: Thais -->
+                <div data-id="3" class="agency-model-card aspect-[3/4] bg-black rounded relative overflow-hidden cursor-pointer border hover:border-gold transition-all group">
+                    <img src="images/thais_2.jpg" onerror="this.src='https://picsum.photos/seed/thais/400/600'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="absolute bottom-0 left-0 p-3 bg-gradient-to-t from-black to-transparent w-full"><h3 class="font-bold text-white uppercase">Thais</h3></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Localização -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-white mb-8 uppercase">Localização</h2>
+            <div class="bg-zinc-900 rounded-xl overflow-hidden h-[400px] border border-gray-800 shadow-gold">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197!2d-46.6586!3d-23.5630!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa365%3A0x4c26638e76527416!2sAv.%20Paulista%2C%201000!5e0!3m2!1spt-BR!2sbr!4v1625680000000" width="100%" height="100%" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="mt-6 flex flex-col md:flex-row justify-between text-gray-400 text-sm px-4 bg-zinc-900 p-4 rounded border border-gray-800">
+                <div class="flex items-center gap-2">
+                    <span class="text-gold">📍</span> Av. Paulista, 1000 - Jardins, São Paulo - SP
+                </div>
+                <div class="flex items-center gap-2 mt-2 md:mt-0">
+                    <span class="text-gold">📞</span> (11) 99999-9999
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrossel Regiões -->
+        <div>
+            <h2 class="text-3xl font-bold text-center text-white mb-8 uppercase">Modelos em Outras <span class="text-gold">Regiões</span></h2>
+            <div id="regions-container" class="flex overflow-x-auto gap-6 pb-6 scrollbar-hide p-2">
+                <!-- Injetado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para reutilização -->
+    <div id="generic-modal" class="hidden fixed inset-0 z-[100] bg-black/95 items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-zinc-900 w-full max-w-5xl h-[90vh] rounded-lg border border-gray-800 relative flex flex-col p-6 overflow-y-auto animate-fade-in shadow-2xl">
+            <button id="close-modal" class="absolute top-4 right-4 text-white hover:text-gold z-50 bg-black/50 rounded-full p-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+            <div id="modal-content-body" class="mt-4 h-full"></div>
+        </div>
+    </div>
+
+    <footer class="bg-zinc-950 border-t border-gray-900 py-10 text-center mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-xl font-bold text-white uppercase mb-4">Morena <span class="text-gold">Bruta</span></h2>
+            <p class="text-gray-600 text-xs">&copy; 2024 Morena Bruta. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
